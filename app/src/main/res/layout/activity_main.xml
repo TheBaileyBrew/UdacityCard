@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.thebaileybrew.www.udacitycard.MainActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- Add Main UDACITY details here -->
+            <ImageView
+                android:id="@+id/main_udacity_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foregroundGravity="center_horizontal"
+                android:background="@drawable/udacity_logo_crop"/>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/design_bottom_sheet_four"
+        android:onClick="onClickOpenSheetFour"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_gravity="top"
+        android:background="@color/colorTabFour"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="200dp"
+        app:elevation="4dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <TextView
+            android:id="@+id/sheet_four_header"
+            style="@style/HiddenSheet_Headers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="SOCIAL NETWORKS"
+            android:textColor="@color/colorPrimaryDark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/design_bottom_sheet_three"
+        android:onClick="onClickOpenSheetThree"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_gravity="top"
+        android:background="@color/colorTabThree"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="150dp"
+        app:elevation="4dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <TextView
+            android:id="@+id/sheet_three_header"
+            style="@style/HiddenSheet_Headers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="LOCATION AND CONTACT"
+            android:textColor="@color/colorPrimaryDark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/design_bottom_sheet_two"
+        android:onClick="onClickOpenSheetTwo"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="top"
+        android:background="@color/colorTabTwo"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="100dp"
+        app:elevation="4dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <TextView
+            android:id="@+id/sheet_two_header"
+            style="@style/HiddenSheet_Headers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="COMPANY MOTTO"
+            android:textColor="@color/colorPrimaryDark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/design_bottom_sheet"
+        android:onClick="onClickOpenSheetOne"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_gravity="top"
+        android:background="@color/colorTabOne"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="50dp"
+        app:elevation="4dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <TextView
+            android:id="@+id/sheet_one_header"
+            style="@style/HiddenSheet_Headers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="NANODEGREE PROGRAMS"
+            android:textColor="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
