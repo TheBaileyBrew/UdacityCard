@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Udacity Card</string>
+
+    <string name="artificial_intel">Learn skills and tools used by the most innovative AI teams, gain experience solving real-world challenges, and prepare for a wide variety of roles in the AI field.</string>
+    <string name="business_analytics">Predictive analytics is the practice of determining patterns from data to predict future outcomes and trends. Across industries, it enables high-value solutions to important business problems. </string>
+    <string name="data_science">Start building your data skills today by learning to manipulate, analyze, and visualize data with Excel, SQL, and Tableau.</string>
+    <string name="dev_mobile">Master writing in Swift as you build five portfolio-worthy iOS apps to demonstrate your expertise as an iOS Developer. \nNo programming experience? No Problem! Start developing Android apps today and build a robust portfolio. </string>
+    <string name="machine_learning">Deep learning is driving advances in artificial intelligence that are changing our world. Enroll now to build and apply your own deep neural networks to produce amazing solutions to important challenges.</string>
+    <string name="programming_basics">Udacity\'s Intro to Programming is your first step towards careers in Web and App Development, Machine Learning, Data Science, AI, and more! This program is perfect for beginners. </string>
+    <string name="robotics">Master advanced robotics software engineering skills, and gain hands-on experience developing solutions that solve challenging robotics and AI problems.</string>
+    <string name="self_driving">You will learn the principles of 3D computer graphics: meshes, transforms, lighting, animation, and making interactive 3D applications run in a browser and apply these principles with several programming languages to develop sel-driving technology.</string>
+    <string name="vr_ar">Put your skills to work in the exciting field of augmented and virtual reality! Learn the fundamentals of AR and VR and build your very own AR/VR app. Master the tools and technology used and learn from industry experts like Google, Unity, and HTC.</string>
+    <string name="websites">Starting from the basics of how the web works, you will learn everything you need to know to build blogs, full websites and support both front end and back end development.</string>
 </resources>

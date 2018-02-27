@@ -22,7 +22,6 @@
                 android:layout_height="wrap_content"
                 android:foregroundGravity="center_horizontal"
                 android:background="@drawable/udacity_logo_crop"/>
-
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
@@ -30,8 +29,9 @@
         android:id="@+id/design_bottom_sheet_four"
         android:onClick="onClickOpenSheetFour"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="575dp"
         android:layout_gravity="top"
+        android:orientation="vertical"
         android:background="@color/colorTabFour"
         app:behavior_hideable="false"
         app:behavior_peekHeight="200dp"
@@ -41,18 +41,113 @@
             android:id="@+id/sheet_four_header"
             style="@style/HiddenSheet_Headers"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:gravity="center_horizontal"
-            android:text="SOCIAL NETWORKS"
+            android:text="WHAT CAN I LEARN?"
             android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/textview_standard"
+            android:paddingBottom="@dimen/scrollview_padding_vertical"
+            android:text="Udacity offers training courses in numerous in-demand fields."/>
+        <HorizontalScrollView
+            android:id="@+id/learn_udacity_list"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:padding="@dimen/scrollview_padding">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/artificial_intel"
+                android:onClick="onClickOptionOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/artificial_intel"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/business_analytics"
+                android:onClick="onClickOptionTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/business_analytics"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/data_science"
+                android:onClick="onClickOptionThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/data_science"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/machine_learning"
+                android:onClick="onClickOptionFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/machine_learning"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/dev_mobile"
+                android:onClick="onClickOptionFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dev_mobile"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/robotics"
+                android:onClick="onClickOptionSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/robotics"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/programming_basics"
+                android:onClick="onClickOptionSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/programming_basics"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/self_driving"
+                android:onClick="onClickOptionEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/self_driving"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/vr_ar"
+                android:onClick="onClickOptionNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/vr_ar"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            <ImageView
+                android:id="@+id/websites"
+                android:onClick="onClickOptionTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/websites"
+                android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView
+            android:id="@+id/course_details_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_top"
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/design_bottom_sheet_three"
         android:onClick="onClickOpenSheetThree"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="525dp"
         android:layout_gravity="top"
+        android:orientation="vertical"
         android:background="@color/colorTabThree"
         app:behavior_hideable="false"
         app:behavior_peekHeight="150dp"
@@ -62,18 +157,20 @@
             android:id="@+id/sheet_three_header"
             style="@style/HiddenSheet_Headers"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:gravity="center_horizontal"
-            android:text="LOCATION AND CONTACT"
+            android:text="WHO ARE THE PROGRAMS DESIGNED FOR?"
             android:textColor="@color/colorPrimaryDark"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/design_bottom_sheet_two"
         android:onClick="onClickOpenSheetTwo"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="475dp"
         android:layout_gravity="top"
+        android:orientation="vertical"
         android:background="@color/colorTabTwo"
         app:behavior_hideable="false"
         app:behavior_peekHeight="100dp"
@@ -83,9 +180,15 @@
             android:id="@+id/sheet_two_header"
             style="@style/HiddenSheet_Headers"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:gravity="center_horizontal"
-            android:text="COMPANY MOTTO"
+            android:text="HOW CAN I CONTACT UDACITY?"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:text="2465 Latham St. \n Mountain View, CA 94043"
             android:textColor="@color/colorPrimaryDark"/>
     </LinearLayout>
 
@@ -93,8 +196,9 @@
         android:id="@+id/design_bottom_sheet"
         android:onClick="onClickOpenSheetOne"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="425dp"
         android:layout_gravity="top"
+        android:orientation="vertical"
         android:background="@color/colorTabOne"
         app:behavior_hideable="false"
         app:behavior_peekHeight="50dp"
@@ -104,9 +208,9 @@
             android:id="@+id/sheet_one_header"
             style="@style/HiddenSheet_Headers"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:gravity="center_horizontal"
-            android:text="NANODEGREE PROGRAMS"
+            android:text="WHAT ARE YOU WAITING FOR?"
             android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>

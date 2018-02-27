@@ -9,12 +9,12 @@
     </style>
 
     <style name="HiddenSheet_Headers">
-        <item name="android:textSize">@dimen/header_text</item>
+        <item name="android:textSize">@dimen/header_full</item>
         <item name="android:paddingTop">@dimen/padding_top</item>
     </style>
 
     <style name="HiddenSheet_Headers_Expanded">
-        <item name="android:textSize">@dimen/header_full</item>
+        <item name="android:textSize">@dimen/header_text</item>
         <item name="android:paddingTop">@dimen/padding_top</item>
     </style>
 

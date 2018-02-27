@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="header_text">24sp</dimen>
-    <dimen name="padding_top">12dp</dimen>
+    <dimen name="header_text">26sp</dimen>
+    <dimen name="padding_top">16dp</dimen>
 
     <dimen name="header_full">18sp</dimen>
-    <dimen name="padding_full">18dp</dimen>
+    <dimen name="padding_full">22dp</dimen>
+    <dimen name="scrollview_padding_vertical">8dp</dimen>
+    <dimen name="scrollview_padding">4dp</dimen>
+    <dimen name="textview_standard">22sp</dimen>
 </resources>
