@@ -11,4 +11,13 @@
     <string name="self_driving">You will learn the principles of 3D computer graphics: meshes, transforms, lighting, animation, and making interactive 3D applications run in a browser and apply these principles with several programming languages to develop sel-driving technology.</string>
     <string name="vr_ar">Put your skills to work in the exciting field of augmented and virtual reality! Learn the fundamentals of AR and VR and build your very own AR/VR app. Master the tools and technology used and learn from industry experts like Google, Unity, and HTC.</string>
     <string name="websites">Starting from the basics of how the web works, you will learn everything you need to know to build blogs, full websites and support both front end and back end development.</string>
+
+    <string name="master_skills">Master your skills</string>
+    <string name="master_skills_details">Our Nanodegree programs are built with the world\'s most forward-thinking companies-Google, Facebook, AT&amp;T, IBM, GitHub, and more.</string>
+
+    <string name="get_hired">Get hired by world-changers</string>
+    <string name="get_hired_details">Hiring partnerships with leaders like IBM, Mercedes-Benz, Didi Chuxing, and more open amazing career opportunities.</string>
+
+    <string name="maximize_impact">Maximize your impact</string>
+    <string name="maximize_impact_details">Create an amazing future in any field from transportation to commerce and health care to government. Expand your opportunities. Exceed your expectations.</string>
 </resources>

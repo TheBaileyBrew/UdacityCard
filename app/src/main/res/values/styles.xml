@@ -18,4 +18,19 @@
         <item name="android:paddingTop">@dimen/padding_top</item>
     </style>
 
+    <style name="HiddenSheet_Subheader">
+        <item name="android:textSize">@dimen/header_full</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorHeaderTabFour</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="HiddenSheet_Subheader_Details">
+        <item name="android:textSize">@dimen/textview_small</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
 </resources>
