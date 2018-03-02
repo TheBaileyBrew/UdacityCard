@@ -1,43 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.thebaileybrew.www.udacitycard.MainActivity">
 
-    <android.support.v4.widget.NestedScrollView
+    <ImageView
+        android:id="@+id/main_udacity_logo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center_horizontal"
+        android:background="@drawable/udacity_logo_crop"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <!-- Add Main UDACITY details here -->
-            <ImageView
-                android:id="@+id/main_udacity_logo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:foregroundGravity="center_horizontal"
-                android:background="@drawable/udacity_logo_crop"/>
-        </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-    <!-- SHEET FOUR -->
-    <LinearLayout
-        android:id="@+id/design_bottom_sheet_four"
-        android:onClick="onClickOpenSheetFour"
+    <!-- SHEET FOUR-->
+    <com.github.florent37.expansionpanel.ExpansionHeader
         android:layout_width="match_parent"
-        android:layout_height="575dp"
-        android:layout_gravity="top"
-        android:orientation="vertical"
+        android:layout_height="50dp"
+        android:id="@+id/header_indicator_four"
         android:background="@color/colorTabFour"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="200dp"
-        app:elevation="4dp"
-        app:layout_behavior="@string/bottom_sheet_behavior">
+        app:expansion_layout="@id/expansionLayoutFour"
+        app:expansion_toggleOnClick="true"
+        android:layout_above="@id/expansionLayoutFour"
+        >
         <TextView
             android:id="@+id/sheet_four_header"
             style="@style/HiddenSheet_Headers"
@@ -46,107 +35,126 @@
             android:gravity="center_horizontal"
             android:text="WHAT IS UDACITY ABOUT?"
             android:textColor="@color/colorPrimaryDark"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:padding="@dimen/padding_small">
-            <ImageView
-                android:id="@+id/master_skills_image"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/icon_bulb"/>
-            <TextView
-                android:id="@+id/master_skills_header"
-                style="@style/HiddenSheet_Subheader"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/master_skills_image"
-                android:layout_alignTop="@id/master_skills_image"
-                android:text="@string/master_skills"/>
-            <TextView
-                android:id="@+id/master_skills_details"
-                style="@style/HiddenSheet_Subheader_Details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/master_skills_image"
-                android:layout_below="@id/master_skills_header"
-                android:text="@string/master_skills_details"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:padding="@dimen/padding_small">
-            <TextView
-                android:id="@+id/get_hired_header"
-                style="@style/HiddenSheet_Subheader"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/get_hired_image"
-                android:layout_alignTop="@id/get_hired_image"
-                android:text="@string/get_hired"/>
-            <TextView
-                android:id="@+id/get_hired_details"
-                style="@style/HiddenSheet_Subheader_Details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/get_hired_image"
-                android:layout_below="@id/get_hired_header"
-                android:text="@string/get_hired_details"/>
-            <ImageView
-                android:id="@+id/get_hired_image"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/icon_badge"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:padding="@dimen/padding_small">
-            <ImageView
-                android:id="@+id/maximize_impact_image"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/icon_keys"/>
-            <TextView
-                android:id="@+id/maximize_impact_header"
-                style="@style/HiddenSheet_Subheader"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/maximize_impact_image"
-                android:layout_alignTop="@id/maximize_impact_image"
-                android:text="@string/maximize_impact"/>
-            <TextView
-                android:id="@+id/maximize_impact_details"
-                style="@style/HiddenSheet_Subheader_Details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/maximize_impact_image"
-                android:layout_below="@id/maximize_impact_header"
-                android:text="@string/maximize_impact_details"/>
-        </RelativeLayout>
-    </LinearLayout>
-
-    <!-- SHEET THREE -->
-    <LinearLayout
-        android:id="@+id/design_bottom_sheet_three"
-        android:onClick="onClickOpenSheetThree"
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/expansion_sheet_four_toggle"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayoutFour"
+        android:background="@color/colorTabFour"
         android:layout_width="match_parent"
         android:layout_height="525dp"
-        android:layout_gravity="top"
-        android:orientation="vertical"
+        android:layout_above="@id/header_indicator_three">
+        <LinearLayout
+            android:id="@+id/design_bottom_sheet_four"
+            android:layout_width="match_parent"
+            android:layout_height="575dp"
+            android:orientation="vertical"
+            android:background="@color/colorTabFour">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:padding="@dimen/padding_small">
+                <ImageView
+                    android:id="@+id/master_skills_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_bulb"/>
+                <TextView
+                    android:id="@+id/master_skills_header"
+                    style="@style/HiddenSheet_Subheader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/master_skills_image"
+                    android:layout_alignTop="@id/master_skills_image"
+                    android:text="@string/master_skills"/>
+                <TextView
+                    android:id="@+id/master_skills_details"
+                    style="@style/HiddenSheet_Subheader_Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/master_skills_image"
+                    android:layout_below="@id/master_skills_header"
+                    android:text="@string/master_skills_details"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:padding="@dimen/padding_small">
+                <TextView
+                    android:id="@+id/get_hired_header"
+                    style="@style/HiddenSheet_Subheader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/get_hired_image"
+                    android:layout_alignTop="@id/get_hired_image"
+                    android:text="@string/get_hired"/>
+                <TextView
+                    android:id="@+id/get_hired_details"
+                    style="@style/HiddenSheet_Subheader_Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/get_hired_image"
+                    android:layout_below="@id/get_hired_header"
+                    android:text="@string/get_hired_details"/>
+                <ImageView
+                    android:id="@+id/get_hired_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/icon_badge"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:padding="@dimen/padding_small">
+                <ImageView
+                    android:id="@+id/maximize_impact_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/icon_keys"/>
+                <TextView
+                    android:id="@+id/maximize_impact_header"
+                    style="@style/HiddenSheet_Subheader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/maximize_impact_image"
+                    android:layout_alignTop="@id/maximize_impact_image"
+                    android:text="@string/maximize_impact"/>
+                <TextView
+                    android:id="@+id/maximize_impact_details"
+                    style="@style/HiddenSheet_Subheader_Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/maximize_impact_image"
+                    android:layout_below="@id/maximize_impact_header"
+                    android:text="@string/maximize_impact_details"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+    <!-- SHEET THREE-->
+    <com.github.florent37.expansionpanel.ExpansionHeader
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/header_indicator_three"
         android:background="@color/colorTabThree"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="150dp"
-        app:elevation="4dp"
-        app:layout_behavior="@string/bottom_sheet_behavior">
+        app:expansion_layout="@id/expansionLayoutThree"
+        app:expansion_toggleOnClick="true"
+        android:layout_above="@id/expansionLayoutThree">
         <TextView
             android:id="@+id/sheet_three_header"
             style="@style/HiddenSheet_Headers"
@@ -155,119 +163,135 @@
             android:gravity="center_horizontal"
             android:text="HOW MUCH CAN I LEARN?"
             android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:id="@+id/sheet_three_overview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/textview_standard"
-            android:paddingBottom="@dimen/scrollview_padding_vertical"
-            android:text="Udacity offers training courses in numerous in-demand fields."/>
-        <HorizontalScrollView
-            android:id="@+id/learn_udacity_list"
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/expansion_sheet_three_toggle"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:visibility="invisible"
-            android:padding="@dimen/scrollview_padding">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/artificial_intel"
-                    android:onClick="onClickOptionOne"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/artificial_intel"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/business_analytics"
-                    android:onClick="onClickOptionTwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/business_analytics"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/data_science"
-                    android:onClick="onClickOptionThree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/data_science"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/machine_learning"
-                    android:onClick="onClickOptionFour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/machine_learning"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/dev_mobile"
-                    android:onClick="onClickOptionFive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/dev_mobile"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/robotics"
-                    android:onClick="onClickOptionSix"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/robotics"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/programming_basics"
-                    android:onClick="onClickOptionSeven"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/programming_basics"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/self_driving"
-                    android:onClick="onClickOptionEight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/self_driving"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/vr_ar"
-                    android:onClick="onClickOptionNine"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/vr_ar"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-                <ImageView
-                    android:id="@+id/websites"
-                    android:onClick="onClickOptionTen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/websites"
-                    android:layout_marginHorizontal="@dimen/scrollview_padding"/>
-            </LinearLayout>
-        </HorizontalScrollView>
-        <TextView
-            android:id="@+id/course_details_display"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_top"
-            android:textSize="16sp"/>
-
-    </LinearLayout>
-
-    <!-- SHEET TWO -->
-    <LinearLayout
-        android:id="@+id/design_bottom_sheet_two"
-        android:onClick="onClickOpenSheetTwo"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayoutThree"
+        android:background="@color/colorTabThree"
         android:layout_width="match_parent"
         android:layout_height="475dp"
-        android:layout_gravity="top"
-        android:orientation="vertical"
+        android:layout_above="@id/header_indicator_two">
+        <LinearLayout
+            android:id="@+id/design_bottom_sheet_three"
+            android:layout_width="match_parent"
+            android:layout_height="475dp"
+            android:orientation="vertical"
+            android:visibility="invisible">
+            <TextView
+                android:id="@+id/sheet_three_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/textview_standard"
+                android:paddingBottom="@dimen/scrollview_padding_vertical"
+                android:text="Udacity offers training courses in numerous in-demand fields."/>
+            <HorizontalScrollView
+                android:id="@+id/learn_udacity_list"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:padding="@dimen/scrollview_padding">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/artificial_intel"
+                        android:onClick="onClickOptionOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/artificial_intel"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/business_analytics"
+                        android:onClick="onClickOptionTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/business_analytics"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/data_science"
+                        android:onClick="onClickOptionThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/data_science"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/machine_learning"
+                        android:onClick="onClickOptionFour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/machine_learning"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/dev_mobile"
+                        android:onClick="onClickOptionFive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dev_mobile"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/robotics"
+                        android:onClick="onClickOptionSix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/robotics"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/programming_basics"
+                        android:onClick="onClickOptionSeven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/programming_basics"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/self_driving"
+                        android:onClick="onClickOptionEight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/self_driving"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/vr_ar"
+                        android:onClick="onClickOptionNine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/vr_ar"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                    <ImageView
+                        android:id="@+id/websites"
+                        android:onClick="onClickOptionTen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/websites"
+                        android:layout_marginHorizontal="@dimen/scrollview_padding"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TextView
+                android:id="@+id/course_details_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_top"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+    <!-- SHEET TWO-->
+    <com.github.florent37.expansionpanel.ExpansionHeader
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/header_indicator_two"
         android:background="@color/colorTabTwo"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="100dp"
-        app:elevation="4dp"
-        app:layout_behavior="@string/bottom_sheet_behavior">
+        app:expansion_layout="@id/expansionLayoutTwo"
+        app:expansion_toggleOnClick="true"
+        android:layout_above="@id/expansionLayoutTwo">
         <TextView
             android:id="@+id/sheet_two_header"
             style="@style/HiddenSheet_Headers"
@@ -276,27 +300,46 @@
             android:gravity="center_horizontal"
             android:text="WHERE CAN I FIND UDACITY?"
             android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:layout_width="match_parent"
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/expansion_sheet_two_toggle"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:text="2465 Latham St. \n Mountain View, CA 94043"
-            android:textColor="@color/colorPrimaryDark"/>
-    </LinearLayout>
-
-    <!-- SHEET ONE -->
-    <LinearLayout
-        android:id="@+id/design_bottom_sheet"
-        android:onClick="onClickOpenSheetOne"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayoutTwo"
+        android:background="@color/colorTabTwo"
         android:layout_width="match_parent"
         android:layout_height="425dp"
-        android:layout_gravity="top"
-        android:orientation="vertical"
+        android:layout_above="@id/header_indicator_one">
+        <LinearLayout
+            android:id="@+id/design_bottom_sheet_two"
+            android:layout_width="match_parent"
+            android:layout_height="425dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:text="2465 Latham St. \n Mountain View, CA 94043"
+                android:textColor="@color/colorPrimaryDark"/>
+        </LinearLayout>
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+    <!-- SHEET ONE-->
+    <com.github.florent37.expansionpanel.ExpansionHeader
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/header_indicator_one"
         android:background="@color/colorTabOne"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="50dp"
-        app:elevation="4dp"
-        app:layout_behavior="@string/bottom_sheet_behavior">
+        app:expansion_layout="@id/expansionLayoutOne"
+        app:expansion_toggleOnClick="true"
+        android:layout_above="@id/expansionLayoutOne">
         <TextView
             android:id="@+id/sheet_one_header"
             style="@style/HiddenSheet_Headers"
@@ -305,9 +348,30 @@
             android:gravity="center_horizontal"
             android:text="WHAT ARE YOU WAITING FOR?"
             android:textColor="@color/colorPrimaryDark"/>
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/expansion_sheet_one_toggle"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayoutOne"
+        android:background="@color/colorTabOne"
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/design_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:orientation="vertical">
 
-    </LinearLayout>
+        </LinearLayout>
+    </com.github.florent37.expansionpanel.ExpansionLayout>
 
 
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
