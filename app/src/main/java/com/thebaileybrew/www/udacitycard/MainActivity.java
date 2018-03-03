@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.github.florent37.expansionpanel.ExpansionHeader;
 import com.github.florent37.expansionpanel.ExpansionLayout;
 import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 
@@ -24,6 +25,8 @@ import static android.view.View.VISIBLE;
 public class MainActivity extends AppCompatActivity {
     //Declares the generic elements used through the activity
     ImageView mainLogo;
+    Animation rotateClockwise;
+    Animation rotateCounterClockwise;
     Animation fadein;
     Animation fadeout;
     Animation fadeinshort;
@@ -38,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
     TextView headerText3;
     TextView headerText4;
 
-    ImageView headerToggleVector;
-    ImageView headerToggleVectorTwo;
-    ImageView headerToggleVectorThree;
-    ImageView headerToggleVectorFour;
+    ExpansionHeader headerSheetOne;
+    ExpansionHeader headerSheetTwo;
+    ExpansionHeader headerSheetThree;
+    ExpansionHeader headerSheetFour;
 
     //Declares unique elements for Sheet One
     //Declares unique elements for Sheet Two
@@ -66,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
         ex2 = findViewById(R.id.expansionLayoutTwo);
         ex3 = findViewById(R.id.expansionLayoutThree);
         ex4 = findViewById(R.id.expansionLayoutFour);
+        headerSheetOne = findViewById(R.id.header_indicator_one);
+        headerSheetTwo = findViewById(R.id.header_indicator_two);
+        headerSheetThree = findViewById(R.id.header_indicator_three);
+        headerSheetFour = findViewById(R.id.header_indicator_four);
         mainLogo = findViewById(R.id.main_udacity_logo);
+        rotateClockwise = AnimationUtils.loadAnimation(this, R.anim.rotate_clockwise);
+        rotateCounterClockwise = AnimationUtils.loadAnimation(this, R.anim.rotate_counter_clockwise);
         fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         fadeout = AnimationUtils.loadAnimation(this,R.anim.fade_out);
         fadeinshort = AnimationUtils.loadAnimation(this, R.anim.fade_in_short);
@@ -75,10 +84,6 @@ public class MainActivity extends AppCompatActivity {
         headerText2 = findViewById(R.id.sheet_two_header);
         headerText3 = findViewById(R.id.sheet_three_header);
         headerText4 = findViewById(R.id.sheet_four_header);
-        headerToggleVector = findViewById(R.id.expansion_sheet_one_toggle);
-        headerToggleVectorTwo = findViewById(R.id.expansion_sheet_two_toggle);
-        headerToggleVectorThree = findViewById(R.id.expansion_sheet_three_toggle);
-        headerToggleVectorFour = findViewById(R.id.expansion_sheet_four_toggle);
 
 
         //Specific to SHEET THREE
@@ -168,8 +173,6 @@ public class MainActivity extends AppCompatActivity {
                     headerText4.setVisibility(VISIBLE);
                     sheetFourSubheaderOne.setVisibility(VISIBLE); sheetFourSubheaderTwo.setVisibility(VISIBLE); sheetFourSubheaderThree.setVisibility(VISIBLE);
                     sheetFourSubOneDetails.setVisibility(VISIBLE); sheetFourSubTwoDetails.setVisibility(VISIBLE); sheetFourSubThreeDetails.setVisibility(VISIBLE);
-                    headerToggleVectorFour.setImageDrawable(getResources().getDrawable(R.drawable.expansion_header_indicator_sheetfourblack_24dp));
-
                 } else {
                     fadeToFull();
                     headerText4.setVisibility(INVISIBLE);
@@ -183,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
                     sheetFourSubOneDetails.setVisibility(INVISIBLE);
                     sheetFourSubTwoDetails.setVisibility(INVISIBLE);
                     sheetFourSubThreeDetails.setVisibility(INVISIBLE);
-                    headerToggleVectorFour.setImageDrawable(getResources().getDrawable(R.drawable.expansion_header_indicator_sheetfour_24dp));
                 }
             }
         });

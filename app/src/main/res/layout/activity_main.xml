@@ -43,7 +43,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutFour"
@@ -171,7 +171,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutThree"
@@ -308,7 +308,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutTwo"
@@ -356,7 +356,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/expansion_header_indicator_sheetfour_24dp"/>
+            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutOne"

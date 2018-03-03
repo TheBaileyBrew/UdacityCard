@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UdacityCard.iml" filepath="$PROJECT_DIR$/UdacityCard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/UdacityCard.iml" filepath="$PROJECT_DIR$/.idea/UdacityCard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
