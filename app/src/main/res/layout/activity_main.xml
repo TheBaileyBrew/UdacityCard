@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:foregroundGravity="center_horizontal"
         android:background="@drawable/udacity_logo_crop"
+        android:layout_marginTop="16dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"/>
 
@@ -35,15 +36,16 @@
             android:gravity="center_horizontal"
             android:text="WHAT IS UDACITY ABOUT?"
             android:textColor="@color/colorPrimaryDark"/>
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/expansion_sheet_four_toggle"
-            android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:layout_marginLeft="16dp"
+
+        <cdflynn.android.library.crossview.CrossView
+            android:id="@+id/sheet_four_toggle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
+            android:layout_gravity="end"
+            app:lineColor="@color/colorWhite"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutFour"
@@ -163,15 +165,15 @@
             android:gravity="center_horizontal"
             android:text="HOW MUCH CAN I LEARN?"
             android:textColor="@color/colorPrimaryDark"/>
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/expansion_sheet_three_toggle"
-            android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:layout_marginLeft="16dp"
+        <cdflynn.android.library.crossview.CrossView
+            android:id="@+id/sheet_three_toggle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
+            android:layout_gravity="end"
+            app:lineColor="@color/colorWhite"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutThree"
@@ -277,9 +279,9 @@
             <TextView
                 android:id="@+id/course_details_display"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="175dp"
                 android:layout_margin="@dimen/padding_top"
-                android:textSize="16sp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
     </com.github.florent37.expansionpanel.ExpansionLayout>
 
@@ -300,15 +302,15 @@
             android:gravity="center_horizontal"
             android:text="WHERE CAN I FIND UDACITY?"
             android:textColor="@color/colorPrimaryDark"/>
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/expansion_sheet_two_toggle"
-            android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:layout_marginLeft="16dp"
+        <cdflynn.android.library.crossview.CrossView
+            android:id="@+id/sheet_two_toggle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
+            android:layout_gravity="end"
+            app:lineColor="@color/colorWhite"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutTwo"
@@ -321,13 +323,19 @@
             android:layout_width="match_parent"
             android:layout_height="425dp"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|top"
                 android:text="2465 Latham St. \n Mountain View, CA 94043"
                 android:textColor="@color/colorPrimaryDark"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="000-000-0000"
+                android:textSize="16dp"/>
+            <!-- Add Google Maps integration view-->
+
         </LinearLayout>
     </com.github.florent37.expansionpanel.ExpansionLayout>
 
@@ -348,15 +356,15 @@
             android:gravity="center_horizontal"
             android:text="WHAT ARE YOU WAITING FOR?"
             android:textColor="@color/colorPrimaryDark"/>
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/expansion_sheet_one_toggle"
-            android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:layout_marginLeft="16dp"
+        <cdflynn.android.library.crossview.CrossView
+            android:id="@+id/sheet_one_toggle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"/>
+            android:layout_gravity="end"
+            app:lineColor="@color/colorWhite"/>
     </com.github.florent37.expansionpanel.ExpansionHeader>
     <com.github.florent37.expansionpanel.ExpansionLayout
         android:id="@+id/expansionLayoutOne"
@@ -369,7 +377,11 @@
             android:layout_width="match_parent"
             android:layout_height="375dp"
             android:orientation="vertical">
-
+            <!-- Add Call to Action **BUTTON CLICK TO SUBMIT EMAIL FORM INQUIRY-->
+            <!-- Check programming for the log-in application to validate email address field-->
+            <!-- Update Mailto button to call for intent and open native Email application -->
+            <!-- Mail to application should default a standard introduction -->
+            <!-- Hello Udacity, My name is [ENTER FROM SUBMIT] and I'm interested in learning more about the Nandegree programs-->
         </LinearLayout>
     </com.github.florent37.expansionpanel.ExpansionLayout>
 

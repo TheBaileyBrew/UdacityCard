@@ -1,5 +1,6 @@
 package com.thebaileybrew.www.udacitycard;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
@@ -13,34 +14,47 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.github.florent37.expansionpanel.ExpansionHeader;
 import com.github.florent37.expansionpanel.ExpansionLayout;
 import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
+
+import cdflynn.android.library.crossview.CrossView;
 
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 
 public class MainActivity extends AppCompatActivity {
-    //Declares the generic elements used through the activity
+    //Declares the toggle icons in the Headers
+    CrossView sheetOne;
+    CrossView sheetTwo;
+    CrossView sheetThree;
+    CrossView sheetFour;
+
+    //Generic declarations
     ImageView mainLogo;
-    Animation rotateClockwise;
-    Animation rotateCounterClockwise;
+
+    //Defines the animations for multiple views
     Animation fadein;
     Animation fadeout;
     Animation fadeinshort;
     Animation fadeoutshort;
+
+    //Declares the Expansion Panel Layouts
     ExpansionLayout ex1;
     ExpansionLayout ex2;
     ExpansionLayout ex3;
     ExpansionLayout ex4;
+
     //Declares the text displayed in the Expansion Panel Header
     TextView headerText;
     TextView headerText2;
     TextView headerText3;
     TextView headerText4;
 
+    //Dclares the complete hearder view in the Expansion Panel
     ExpansionHeader headerSheetOne;
     ExpansionHeader headerSheetTwo;
     ExpansionHeader headerSheetThree;
@@ -69,13 +83,15 @@ public class MainActivity extends AppCompatActivity {
         ex2 = findViewById(R.id.expansionLayoutTwo);
         ex3 = findViewById(R.id.expansionLayoutThree);
         ex4 = findViewById(R.id.expansionLayoutFour);
+        sheetOne = findViewById(R.id.sheet_one_toggle);
+        sheetTwo = findViewById(R.id.sheet_two_toggle);
+        sheetThree = findViewById(R.id.sheet_three_toggle);
+        sheetFour = findViewById(R.id.sheet_four_toggle);
         headerSheetOne = findViewById(R.id.header_indicator_one);
         headerSheetTwo = findViewById(R.id.header_indicator_two);
         headerSheetThree = findViewById(R.id.header_indicator_three);
         headerSheetFour = findViewById(R.id.header_indicator_four);
         mainLogo = findViewById(R.id.main_udacity_logo);
-        rotateClockwise = AnimationUtils.loadAnimation(this, R.anim.rotate_clockwise);
-        rotateCounterClockwise = AnimationUtils.loadAnimation(this, R.anim.rotate_counter_clockwise);
         fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         fadeout = AnimationUtils.loadAnimation(this,R.anim.fade_out);
         fadeinshort = AnimationUtils.loadAnimation(this, R.anim.fade_in_short);
@@ -112,9 +128,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onExpansionChanged(ExpansionLayout expansionLayout, boolean expanded) {
                 if (expanded) {
+                    //When the expansion panel is expanded, these actions are taken
                     fadeToCrop();
+                    sheetOne.cross(500);
+                    sheetOne.setColor(getResources().getColor(R.color.colorPrimaryDark));
                 } else {
+                    //When the expansion panel is collapsed, these actions are taken
                     fadeToFull();
+                    sheetOne.plus(500);
+                    sheetOne.setColor(getResources().getColor(R.color.colorWhite));
                 }
             }
         });
@@ -129,8 +151,12 @@ public class MainActivity extends AppCompatActivity {
             public void onExpansionChanged(ExpansionLayout expansionLayout, boolean expanded) {
                 if (expanded) {
                     fadeToCrop();
+                    sheetTwo.cross(500);
+                    sheetTwo.setColor(getResources().getColor(R.color.colorPrimaryDark));
                 } else {
                     fadeToFull();
+                    sheetTwo.plus(500);
+                    sheetTwo.setColor(getResources().getColor(R.color.colorWhite));
                 }
             }
         });
@@ -139,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         /*
         Programming --- HOW MUCH CAN I LEARN?
         TO-DO: Update and cleanup the scrollview, string details for classes
+        TO-DO: Update font formatting and layout
         */
         ex3.addListener(new ExpansionLayout.Listener() {
             @Override
@@ -148,8 +175,12 @@ public class MainActivity extends AppCompatActivity {
                     sheetThreeLinear.setAnimation(fadein);
                     fadein.start();
                     sheetThreeLinear.setVisibility(VISIBLE);
+                    sheetThree.cross(500);
+                    sheetThree.setColor(getResources().getColor(R.color.colorPrimaryDark));
                 } else {
                     fadeToFull();
+                    sheetThree.plus(500);
+                    sheetThree.setColor(getResources().getColor(R.color.colorWhite));
                 }
             }
         });
@@ -173,6 +204,8 @@ public class MainActivity extends AppCompatActivity {
                     headerText4.setVisibility(VISIBLE);
                     sheetFourSubheaderOne.setVisibility(VISIBLE); sheetFourSubheaderTwo.setVisibility(VISIBLE); sheetFourSubheaderThree.setVisibility(VISIBLE);
                     sheetFourSubOneDetails.setVisibility(VISIBLE); sheetFourSubTwoDetails.setVisibility(VISIBLE); sheetFourSubThreeDetails.setVisibility(VISIBLE);
+                    sheetFour.cross(500);
+                    sheetFour.setColor(getResources().getColor(R.color.colorPrimaryDark));
                 } else {
                     fadeToFull();
                     headerText4.setVisibility(INVISIBLE);
@@ -186,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
                     sheetFourSubOneDetails.setVisibility(INVISIBLE);
                     sheetFourSubTwoDetails.setVisibility(INVISIBLE);
                     sheetFourSubThreeDetails.setVisibility(INVISIBLE);
+                    sheetFour.plus(500);
+                    sheetFour.setColor(getResources().getColor(R.color.colorWhite));
                 }
             }
         });
