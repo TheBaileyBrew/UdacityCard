@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.thebaileybrew.www.udacitycard"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,9 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.github.florent37:expansionpanel:1.1.0'
     implementation 'com.github.cdflynn:crossview:v1.0.1'
+    implementation 'com.github.florent37:materialtextfield:1.0.7'
+    implementation 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
+    implementation 'com.google.android.gms:play-services-base:11.8.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.android.gms:play-services-location:11.8.0'
     testImplementation 'junit:junit:4.12'

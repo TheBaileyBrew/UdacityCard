@@ -24,10 +24,9 @@
         android:layout_height="50dp"
         android:id="@+id/header_indicator_four"
         android:background="@color/colorTabFour"
-        app:expansion_layout="@id/expansionLayoutFour"
+        app:expansion_layout="@+id/expansionLayoutFour"
         app:expansion_toggleOnClick="true"
-        android:layout_above="@id/expansionLayoutFour"
-        >
+        android:layout_above="@+id/expansionLayoutFour">
         <TextView
             android:id="@+id/sheet_four_header"
             style="@style/HiddenSheet_Headers"
@@ -35,7 +34,7 @@
             android:layout_height="50dp"
             android:gravity="center_horizontal"
             android:text="WHAT IS UDACITY ABOUT?"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorWhite"/>
 
         <cdflynn.android.library.crossview.CrossView
             android:id="@+id/sheet_four_toggle"
@@ -51,17 +50,24 @@
         android:id="@+id/expansionLayoutFour"
         android:background="@color/colorTabFour"
         android:layout_width="match_parent"
-        android:layout_height="525dp"
+        android:layout_height="375dp"
         android:layout_above="@id/header_indicator_three">
-        <LinearLayout
+       <LinearLayout
             android:id="@+id/design_bottom_sheet_four"
             android:layout_width="match_parent"
-            android:layout_height="575dp"
+            android:layout_height="375dp"
             android:orientation="vertical"
             android:background="@color/colorTabFour">
-            <RelativeLayout
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="75dp"
+               android:textSize="@dimen/textview_standard"
+               android:gravity="center|top"
+               android:padding="@dimen/padding_small"
+               android:text="Udacity is where lifelong learners come to \nlearn the skills they need, to land the jobs \nthey want, to build the lives they deserve."/>
+           <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:padding="@dimen/padding_small">
                 <ImageView
                     android:id="@+id/master_skills_image"
@@ -87,9 +93,9 @@
                     android:layout_below="@id/master_skills_header"
                     android:text="@string/master_skills_details"/>
             </RelativeLayout>
-            <RelativeLayout
+           <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:padding="@dimen/padding_small">
                 <TextView
                     android:id="@+id/get_hired_header"
@@ -116,9 +122,9 @@
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/icon_badge"/>
             </RelativeLayout>
-            <RelativeLayout
+           <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:padding="@dimen/padding_small">
                 <ImageView
                     android:id="@+id/maximize_impact_image"
@@ -145,6 +151,7 @@
                     android:layout_below="@id/maximize_impact_header"
                     android:text="@string/maximize_impact_details"/>
             </RelativeLayout>
+           <!-- VIEWSCAPE FOR PAGER ADAPTER TO ROTATE BETWEEN THE BUTTON TABS ABOVE -->
         </LinearLayout>
     </com.github.florent37.expansionpanel.ExpansionLayout>
 
@@ -164,7 +171,7 @@
             android:layout_height="50dp"
             android:gravity="center_horizontal"
             android:text="HOW MUCH CAN I LEARN?"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorWhite"/>
         <cdflynn.android.library.crossview.CrossView
             android:id="@+id/sheet_three_toggle"
             android:layout_width="20dp"
@@ -179,22 +186,21 @@
         android:id="@+id/expansionLayoutThree"
         android:background="@color/colorTabThree"
         android:layout_width="match_parent"
-        android:layout_height="475dp"
+        android:layout_height="325dp"
         android:layout_above="@id/header_indicator_two">
         <LinearLayout
             android:id="@+id/design_bottom_sheet_three"
             android:layout_width="match_parent"
-            android:layout_height="475dp"
-            android:orientation="vertical"
-            android:visibility="invisible">
+            android:layout_height="325dp"
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/sheet_three_overview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:gravity="center_horizontal"
                 android:textSize="@dimen/textview_standard"
                 android:paddingBottom="@dimen/scrollview_padding_vertical"
-                android:text="Udacity offers training courses in numerous in-demand fields."/>
+                android:text="With Udacity, there are endless opportunities to learn, \nto grow, and to develop real-world skills that can \nbe applied to your current career or your next step."/>
             <HorizontalScrollView
                 android:id="@+id/learn_udacity_list"
                 android:layout_width="wrap_content"
@@ -279,7 +285,7 @@
             <TextView
                 android:id="@+id/course_details_display"
                 android:layout_width="match_parent"
-                android:layout_height="175dp"
+                android:layout_height="120dp"
                 android:layout_margin="@dimen/padding_top"
                 android:textSize="18sp"/>
         </LinearLayout>
@@ -301,7 +307,7 @@
             android:layout_height="50dp"
             android:gravity="center_horizontal"
             android:text="WHERE CAN I FIND UDACITY?"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorWhite"/>
         <cdflynn.android.library.crossview.CrossView
             android:id="@+id/sheet_two_toggle"
             android:layout_width="20dp"
@@ -316,24 +322,87 @@
         android:id="@+id/expansionLayoutTwo"
         android:background="@color/colorTabTwo"
         android:layout_width="match_parent"
-        android:layout_height="425dp"
+        android:layout_height="275dp"
         android:layout_above="@id/header_indicator_one">
         <LinearLayout
             android:id="@+id/design_bottom_sheet_two"
             android:layout_width="match_parent"
-            android:layout_height="425dp"
+            android:layout_height="275dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:text="2465 Latham St. \n Mountain View, CA 94043"
-                android:textColor="@color/colorPrimaryDark"/>
-            <TextView
+                android:gravity="center_horizontal"
+                android:text="650-555-5555"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:autoLink="phone"
+                android:textColorLink="@color/colorWhite"
+                android:paddingBottom="@dimen/scrollview_padding_vertical"/>
+            <LinearLayout
+                android:id="@+id/clickableNavigationButtons"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="000-000-0000"
-                android:textSize="16dp"/>
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/buttonFacebook"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/black_fb"
+                    android:clickable="true"
+                    android:onClick="onClickIntentCallFaceBook"/>
+                <ImageView
+                    android:id="@+id/buttonLinkedin"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/black_linked"
+                    android:clickable="true"
+                    android:onClick="onClickIntentCallLinkedIn"/>
+                <ImageView
+                    android:id="@+id/buttonNavigation"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/black_location"
+                    android:clickable="true"
+                    android:onClick="onClickIntentCallNavigation"/>
+                <ImageView
+                    android:id="@+id/buttonYoutube"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/black_tube"
+                    android:clickable="true"
+                    android:onClick="onClickIntentCallYoutube"/>
+                <ImageView
+                    android:id="@+id/buttonTwitter"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/black_tweet"
+                    android:clickable="true"
+                    android:onClick="onClickIntentCallTwitter"/>
+            </LinearLayout>
+            <com.gigamole.navigationtabstrip.NavigationTabStrip
+                android:id="@+id/navigation_strip_sheet_two"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_gravity="center"
+                app:nts_active_color="@color/colorPrimaryDark"
+                app:nts_color="@color/colorWhite"
+                app:nts_corners_radius="1dp"
+                app:nts_inactive_color="@color/colorPrimaryDark"
+                app:nts_size="15sp"
+                app:nts_titles="@array/titles"
+                app:nts_weight="3dp"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            </android.support.v4.view.ViewPager>
             <!-- Add Google Maps integration view-->
 
         </LinearLayout>
@@ -355,7 +424,7 @@
             android:layout_height="50dp"
             android:gravity="center_horizontal"
             android:text="WHAT ARE YOU WAITING FOR?"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorWhite"/>
         <cdflynn.android.library.crossview.CrossView
             android:id="@+id/sheet_one_toggle"
             android:layout_width="20dp"
@@ -376,8 +445,50 @@
             android:id="@+id/design_bottom_sheet"
             android:layout_width="match_parent"
             android:layout_height="375dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/scrollview_padding_vertical">
             <!-- Add Call to Action **BUTTON CLICK TO SUBMIT EMAIL FORM INQUIRY-->
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:mtf_cardCollapsedHeight="5dp"
+                android:layout_marginBottom="@dimen/scrollview_padding_vertical">
+                <EditText
+                    android:id="@+id/name_input_edit_text"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"/>
+            </com.github.florent37.materialtextfield.MaterialTextField>
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:mtf_cardCollapsedHeight="5dp"
+                android:layout_marginBottom="4dp">
+                <EditText
+                    android:id="@+id/phone_input_edit_text"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Phone Number"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"/>
+            </com.github.florent37.materialtextfield.MaterialTextField>
+            <Button
+                android:id="@+id/submit_to_email_form_request"
+                android:onClick="onClickOpenEmailFormLetter"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="58dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="SEND US AN EMAIL"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"/>
             <!-- Check programming for the log-in application to validate email address field-->
             <!-- Update Mailto button to call for intent and open native Email application -->
             <!-- Mail to application should default a standard introduction -->

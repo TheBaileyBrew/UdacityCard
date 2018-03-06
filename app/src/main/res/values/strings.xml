@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Udacity Card</string>
+    <string name="udacityaddress">2465 Latham St. Mountain View, CA 94043</string>
 
     <string name="artificial_intel">Learn skills and tools used by the most innovative AI teams, gain experience solving real-world challenges, and prepare for a wide variety of roles in the AI field.</string>
     <string name="business_analytics">Predictive analytics is the practice of determining patterns from data to predict future outcomes and trends. Across industries, it enables high-value solutions to important business problems. </string>

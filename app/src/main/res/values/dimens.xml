@@ -8,6 +8,6 @@
     <dimen name="padding_full">22dp</dimen>
     <dimen name="scrollview_padding_vertical">8dp</dimen>
     <dimen name="scrollview_padding">4dp</dimen>
-    <dimen name="textview_standard">22sp</dimen>
+    <dimen name="textview_standard">16sp</dimen>
     <dimen name="textview_small">14sp</dimen>
 </resources>
