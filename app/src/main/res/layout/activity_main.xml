@@ -32,6 +32,8 @@
             style="@style/HiddenSheet_Headers"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:rotation="90"
+            android:textDirection="ltr"
             android:gravity="center_horizontal"
             android:text="WHAT IS UDACITY ABOUT?"
             android:textColor="@color/colorWhite"/>
